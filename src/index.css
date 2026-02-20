@@ -37,6 +37,16 @@
     --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
+[data-theme="dark"] .action-btn.liked {
+    color: var(--bg);
+    font-weight: 900;
+}
+
+[data-theme="dark"] .chip {
+    background: rgba(232, 168, 124, 0.1);
+}
+
+
 /* ========================================
    RESET & BASE
 ======================================== */
@@ -649,7 +659,7 @@ h4 {
     padding: 0.9rem;
     border-radius: 14px;
     border: 1px solid var(--border);
-    background: white;
+    background: var(--card-bg);
     font-weight: 700;
     font-size: 0.85rem;
     display: flex;
@@ -710,7 +720,7 @@ h4 {
 }
 
 .stat-box {
-    background: white;
+    background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 1.2rem;
@@ -1482,4 +1492,27 @@ h4 {
     border-radius: 100px;
     padding: 0.5rem 1.25rem;
     box-shadow: var(--shadow);
+}
+
+.floating-toolbar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    padding: 0.9rem 2.5rem;
+    border-radius: 100px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    z-index: 100;
+    opacity: 0.95;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .floating-toolbar {
+    background: rgba(38, 22, 16, 0.9);
 }

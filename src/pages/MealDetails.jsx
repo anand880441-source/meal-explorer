@@ -164,22 +164,16 @@ const MealDetails = () => {
             </div>
 
             {/* Floating bar */}
-            <nav style={{
-                position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
-                display: 'flex', alignItems: 'center', gap: '1.5rem',
-                background: 'rgba(253,248,242,0.92)', backdropFilter: 'blur(20px)',
-                padding: '0.9rem 2.5rem', borderRadius: '100px',
-                boxShadow: '0 8px 40px rgba(44,24,16,0.15)', border: '1px solid var(--border)', zIndex: 100,
-            }}>
-                <button onClick={handleLike} style={{ background: 'none', border: 'none', cursor: 'pointer', color: liked ? 'var(--primary)' : 'var(--text-muted)', transition: 'all 0.3s' }}>
+            <nav className="floating-toolbar">
+                <button onClick={handleLike} style={{ background: 'none', border: 'none', cursor: 'pointer', color: liked ? 'var(--primary)' : 'var(--text)', transition: 'all 0.3s' }}>
                     <Heart size={22} fill={liked ? 'currentColor' : 'none'} />
                 </button>
                 <div style={{ width: 1, height: 24, background: 'var(--border)' }} />
-                <button onClick={() => { navigator.clipboard.writeText(window.location.href); addToast('Link copied!', 'success'); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+                <button onClick={() => { navigator.clipboard.writeText(window.location.href); addToast('Link copied!', 'success'); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', transition: 'all 0.3s' }}>
                     <Share2 size={22} />
                 </button>
                 <div style={{ width: 1, height: 24, background: 'var(--border)' }} />
-                <button onClick={() => window.print()} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+                <button onClick={() => window.print()} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', transition: 'all 0.3s' }}>
                     <Printer size={22} />
                 </button>
             </nav>
